@@ -4,32 +4,37 @@
   max-width: 75rem;
   margin: 0 auto;
   overflow: hidden;
-  position: relative;
-}
-
-.bg {
-  position: absolute;
-  top: -4rem;
-  right: 0;
-  z-index: -1;
-  object-fit: cover;
-  height: 100vh;
-}
-
-.Content {
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 2rem;
-  font-size: 3rem;
-  font-weight: 700;
+  gap: 2rem;
+}
+
+.introContent {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 50%;
+}
+
+.bg {
+  flex: 1;
+  max-width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .hello {
   font-size: 1.75rem;
   font-weight: 100;
+}
+
+.introText {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .introName {
@@ -39,7 +44,8 @@
 .introPara {
   font-size: large;
   font-weight: 300;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
+  margin: 1rem 0;
 }
 
 .btn {
@@ -48,29 +54,71 @@
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .btnImg {
   object-fit: cover;
-  margin: 0 0.25rem;
+  margin: 0 0.5rem;
   height: 1rem;
 }
 
+/* Medium screens (e.g., tablets) */
 @media screen and (max-width: 840px) {
-  .bg {
-    right: -10vw;
+  #intro {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
   }
 
   .introContent {
-    font-size: 10vw;
+    max-width: 100%;
+    text-align: center;
   }
+
+  .bg {
+    max-width: 80%;
+    margin-top: 1rem;
+  }
+
+  .introText {
+    font-size: 2rem;
+  }
+
   .hello {
-    font-size: 4.5vw;
+    font-size: 1.5rem;
   }
 }
 
+/* Small screens (e.g., mobile) */
 @media screen and (max-width: 480px) {
+  #intro {
+    padding: 0.5rem;
+  }
+
+  .introContent {
+    max-width: 100%;
+  }
+
   .bg {
-    right: -20vw;
+    max-width: 100%;
+  }
+
+  .introText {
+    font-size: 1.5rem;
+  }
+
+  .hello {
+    font-size: 1.25rem;
+  }
+
+  .introPara {
+    font-size: medium;
+  }
+
+  .btn {
+    padding: 0.5rem 1.5rem;
   }
 }
